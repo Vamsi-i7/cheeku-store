@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #111;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Controls */
+input,
+select {
+    padding: 8px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+/* Product grid */
+#products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+.card {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    height: 120px;
+    object-fit: contain;
+}
+
+.card h3 {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.card p {
+    font-weight: bold;
+    color: #4caf50;
+}
