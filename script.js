@@ -1,4 +1,4 @@
-const API_URL = "https://fakestoreapi.com/products";
+const API_URL = "https://dummyjson.com/products";
 
 const productsContainer = document.getElementById("products");
 const loading = document.getElementById("loading");
@@ -14,7 +14,7 @@ async function fetchProducts() {
         const res = await fetch(API_URL);
         const data = await res.json();
 
-        allProducts = data;
+        allProducts = data.products; // ✅ FIXED
 
         loading.style.display = "none";
         displayProducts(allProducts);
@@ -29,7 +29,7 @@ async function fetchProducts() {
 function displayProducts(products) {
     productsContainer.innerHTML = products.map(product => `
         <div class="card">
-            <img src="${product.image}" width="100">
+            <img src="${product.thumbnail}" width="100"> <!-- ✅ FIXED -->
             <h3>${product.title}</h3>
             <p>₹${product.price}</p>
         </div>
