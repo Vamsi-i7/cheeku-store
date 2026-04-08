@@ -1,53 +1,95 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #111;
-    color: white;
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: #121212;
+    color: #eaeaea;
+    max-width: 1200px;
 }
 
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ffffff;
 }
 
 /* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
 input,
 select {
-    padding: 8px;
-    margin-right: 10px;
-    margin-bottom: 20px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #1e1e1e;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: #4caf50;
+}
+
+#loading {
+    text-align: center;
+    color: #888;
 }
 
 /* Product grid */
 #products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
 }
 
 /* Card */
 .card {
     background: #1e1e1e;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 12px;
     text-align: center;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #2a2a2a;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border-color: #3d8c40;
 }
 
 .card img {
-    height: 120px;
+    height: 140px;
+    width: 100%;
     object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
 }
 
 .card h3 {
-    font-size: 14px;
+    font-size: 15px;
     margin: 10px 0;
+    color: #ffffff;
+    flex-grow: 1;
 }
 
 .card p {
+    font-size: 18px;
     font-weight: bold;
     color: #4caf50;
+    margin: 10px 0 0 0;
 }
